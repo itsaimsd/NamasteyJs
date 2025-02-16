@@ -1,2 +1,2 @@
 var x = 7;
-// javascript
+console.log(x);
