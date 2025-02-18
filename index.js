@@ -1,32 +1,3 @@
-// const radius = [3, 1, 2, 4];
-// const calculateArea = function (radius) {
-//   const output = [];
-//   for (i = 0; i < radius.length; i++) {
-//     output.push(Math.PI * radius[i] * radius[i]);
-//   }
-//   return output;
-// };
-
-// console.log(calculateArea(radius));
-// const calculateCircumference = function (radius) {
-//   const output = [];
-//   for (i = 0; i < radius.length; i++) {
-//     output.push(2 * Math.PI * radius[i] * radius[i]);
-//   }
-//   return output;
-// };
-
-// console.log(calculateCircumference(radius));
-// const calculateDiagram = function (radius) {
-//   const output = [];
-//   for (i = 0; i < radius.length; i++) {
-//     output.push(2 * radius[i]);
-//   }
-//   return output;
-// };
-
-// console.log(calculateDiagram(radius));
-
 const arr = ["a", "b", "c", "d", "e", "f", "g"];
 
 // console.log(arr.length); // Length
@@ -36,6 +7,7 @@ const arr = ["a", "b", "c", "d", "e", "f", "g"];
 
 // At method - we can check which value is where in big array it acccept both +.- value i want to check what is the last index of this array
 console.log(arr.at(-1));
+
 // push - if we want to add anything in array then we can use this [push always --------returen array length] and element will add in last
 arr.push("c");
 console.log(arr);
@@ -50,6 +22,91 @@ arr.unshift("a", { name: "msd" }, ["array"]);
 console.log(arr);
 // includes - [if we passed a value : it check whether the element is present or not ,it return true or false, it is case sensitive]
 console.log(arr.includes("a")); // it return true
-// fill [f]
-const fill = arr.fill("fill method", 0, 2); // [1st [one is what we want to insert] 2nd [one is starting point] 3rd [lenght how much it will not include 0 index]
+// fill it will replace array with what u want to replace
+const fill = arr.fill("fill method", 0, 2); // [1st [one is what we want to insert] 2nd [one is starting point it include index count] 3rd [ how much lenght we need to fill it will not include 0 index]
 console.log(fill);
+// flat [it is used to make falt like {'fill method', 'fill method', 'array', 'b', 'c', 'd', 'e', 'f', 'g'}]
+const flat = arr.flat(); // it doesn't change the exiting arrays
+console.log(flat);
+
+// concat - it add two array , it does not change existing array , we can also concatingate same array [arr1.concat(arr1)]
+const arr1 = [1, 2, 3];
+const arr2 = [1, 2, 3, 4, 5, 6];
+const arr3 = [1, 2, 3, 4, 5, 6];
+const concat = arr1.concat(arr2, arr3);
+console.log(concat);
+
+// reverse- it change the original array
+const reverse = arr.reverse();
+console.log(reverse, arr);
+
+// slice - [it cut / slice the arrray , it does not change the original array]
+const slice = arr.slice(1, 3); // [1 is index oriented and 3 is lenghth (3-1) index]
+console.log(slice);
+
+// splice - it help to add or remove the element in array, it changes the original array
+const splice = arr.splice(-1, 1); //
+console.log(splice);
+// how to add in this
+const spliceAdd = arr.splice(1, 0, "-"); // here [1 is which index we have to add, 0 means how much u want to remove, and 3rd means what u want to add]
+console.log(spliceAdd, arr);
+
+// sort- Array -,it change the orinal array
+const arr5 = ["z", "a", "b", "c", "r", "y", "h", "l", "q", "j"];
+const arrNum = [3, 5, 6, 7, 8, 9, 0];
+const sort = arr5.sort();
+const sort1 = arrNum.sort();
+console.log(sort, arr5, arrNum, sort1);
+
+// some- array method [we use this as a call back] we use this to find is the number >/< then the given number , if we find that the numebr is find in the given array it will return true otherwise it will return false and when its condition match then it return true . false it will not move forward
+const num = [10, 20, 30, 40, 50];
+function findNumber(num) {
+  return num > 20;
+}
+console.log(num.some(findNumber));
+
+// every -  it will check all the element to return true or false but some check one element if conditon match then it return true / false
+
+const num1 = [10, 20, 30, 40, 50];
+function findNumber(num) {
+  return num > 20;
+}
+console.log(num1.every(findNumber));
+
+// for each - it run on whole array and give array and their index , we can not run this as call back it will return undefine
+
+const arr6 = ["z", "a", "b", "c", "r", "y", "h", "l", "q", "j"];
+arr6.forEach(function (i, w) {
+  // console.log(i, w);
+});
+
+// Map - it does not modify original array
+const arr7 = ["z", "a", "b", "c", "r", "y", "h", "l", "q", "j"];
+const map = arr6.map(function (item, index) {
+  return item + index;
+});
+console.log(map);
+
+let str = "Hello";
+// console.log(str[0]);
+// console.log(str.charAt(0));
+
+// split - 
+let str2 = "Hello";
+console.log(str2.split("H"));
+
+// indexof- [it will return index of element, it is car sensitive it will return -1, it will return the element it will find first(index), it start from left to right ]
+const animal = ["dog", "cat", "goat", "cat", "deer"];
+console.log(animal.indexOf("cat", 2)); // [1st[is element] 2nd [is where to start with index {it will start from }]]
+
+// lastindexof-
+const animal2 = ["dog", "cat", "goat", "deer"];
+console.log(animal2.lastIndexOf("dog",2));
+
+// tostring - [] array to string / doesnot change original array]
+const animal3 = ["dog", "cat", "goat", "cat", "deer"];
+console.log(animal3.toString(""));
+
+// join [it changes array to string] and it join betwen two array
+const animal4= ["dog", "cat", "goat", "cat", "deer"];
+console.log(animal4.join(" is animal, "));
