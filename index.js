@@ -110,20 +110,60 @@ console.log(animal3.toString(""));
 // join [it changes array to string] and it join betwen two array
 const animal4 = ["dog", "cat", "goat", "cat", "deer"];
 console.log(animal4.join(" is animal, "));
-
-// for of
+/////////////////////////********************************************************************** */
+// for of [array] are oterable object that why wea are able to use [for of] , we can't use for of in [object] we use [for in]
 const fruits = ["banana", "orange", "peach", "mango", "grapes"];
 for (let i = 0; i < fruits.length; i++) {
   console.log(fruits[i]);
 }
 // **************
 console.log("************************");
-for(const fruit of fruits){
-    console.log(fruit);
-    
+for (const fruit of fruits) {
+  console.log(fruit);
 }
 
 // ***********************
 console.log("************************");
+const names = "Madhusudan Tiwari";
+for (const name of names) {
+  //   console.log(name);
+}
 
+// **********************[for in] object is not iterable object
+const person = {
+  firstName: "John",
+  lastName: "Doe",
+  age: 50,
+  eyeColor: "black",
+  city: "patna",
+};
+for (const key in person) {
+  console.log(key, ":", person[key]);
+}
+
+// we will not use this ***************************************************
+
+const person1 = {
+  firstName: "John",
+  lastName: "Doe",
+  age: 50,
+  eyeColor: "black",
+  city: "patna",
+};
+const personKeys = Object.keys(person1);
+const personValues = Object.values(person1);
+const personEntries = Object.entries(person1);
+
+console.log(personKeys, personValues, personEntries);
+
+// to use for of we use object.key/values/entries and then we use for loop inside this we use for of
+const personKey = Object.keys(person1);
+for (const key of personKey) {
+  console.log(person[key]);
+}
+
+
+// here we use in look carefull this in is different  i think we can only use this to check key in object[1st wali ] it will return T/F
+let a = "age" in person1;
+console.log(a);
 
