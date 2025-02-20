@@ -1,0 +1,279 @@
+<script>
+  // Reverse the string ------------------------------1-------------------------------------------------
+  let sentence = "Hello World";
+  console.log(sentence.split("").reverse().join(""));
+  // another method
+  function reverseString(str) {
+    return str.split("").reverse().join("");
+  }
+  console.log(reverseString("hello"));
+
+  // 2. Write a Program to check whether a string is a palindrome string.
+  let palindrome = "hello";
+  let rev = palindrome.split("").reverse().join("");
+  console.log(palindrome === rev);
+
+  // 2nd methods
+  function isPalindrome(str) {
+    const reverseStr = str.split("").reverse().join("");
+    return str === reverseStr;
+  }
+
+  let pali1 = "hello";
+  let pali2 = "hrasna";
+  console.log(isPalindrome(pali1));
+
+  // 3. Find the largest number in an array in JavaScript.
+  function findlargest(arr) {
+    let largest = arr[0];
+    for (let i = 0; i < arr.length; i++) {
+      if (arr[i] > largest) {
+        largest = arr[i];
+      }
+    }
+    return largest;
+  }
+  console.log(findlargest([22, 21, 44, 54, 65, 43, 2, 5]));
+
+  // another method
+  let arr = [22, 21, 44, 54, 65, 43, 2, 5];
+  let max = Math.max(...arr);
+  console.log(max);
+
+  // 4. How Remove the first element from an array in JavaScript?
+  let arr1 = [22, 21, 44, 54, 65, 43, 2, 5];
+  console.log(arr1.shift());
+  console.log(arr1);
+
+  // 5. Write a Program to use a callback function?
+  // A function that takes another function as a parameter
+  function greet(name, callback) {
+    console.log("Hello, " + name);
+    callback();
+  }
+
+  // A simple callback function
+  function sayGoodbye() {
+    console.log("Goodbye!");
+  }
+
+  // Calling the function with a callback
+  greet("John", sayGoodbye);
+
+  // 6. Write a code to create an arrow function?
+  let add = (a, b, c) => a + b + c;
+  console.log(add(1, 2, 3));
+
+  // 7. Write a Program to add a property to an object?
+  let obj = { book: "kitab" };
+  obj.name = "book";
+  console.log(obj);
+
+  // 8. Write a Program to delete a property from an object?
+  delete obj.name;
+  console.log(obj);
+
+  // 15. Write a Program to find a sum of an array?
+
+  // let arr2 = [1,2,3,4,5,6]
+  function sum(arr) {
+    let sum = 0;
+    for (let i = 0; i < arr.length; i++) {
+      sum += arr[i];
+    }
+    return sum;
+  }
+  console.log(sum([2, 3, 4, 5, 6]));
+
+  // 16. Write a Program to check if a number is prime or not?
+  function isprime(num) {
+    if (num <= 1) {
+      return false;
+    }
+    for (let i = 2; i < num; i++) {
+      if (num % i == 0) {
+        return false;
+      }
+    }
+    return true;
+  }
+  console.log(isprime(7));
+
+  // 17. Write a Program to print Fibonacci sequence up to n terms?
+  function Fibonacci(n) {
+    let num1 = 0;
+    let num2 = 1;
+    let nextNum;
+    for (let i = 1; i <= n; i++) {
+      console.log(num1);
+
+      nextNum = num1 + num2;
+      num1 = num2;
+      num2 = nextNum;
+    }
+  }
+  // console.log(Fibonacci(7));
+  Fibonacci(7);
+
+  // 18. Write a Program to find factorial of a number?
+
+  function factorial(num) {
+    let ans = 1;
+    for (let i = 2; i <= num; i++) {
+      ans *= i;
+    }
+    return ans;
+  }
+  console.log(factorial(7));
+
+  // 19. Calculate the Power of a Number in JavaScript?
+  function power(base, exponent) {
+    return base * exponent;
+  }
+  console.log(power(3, 2));
+
+  // 20. Write a Program to print the frequency of elements in an array?
+
+  function fre(arr) {
+    let fre = {};
+    for (let i = 0; i < arr.length; i++) {
+      if (fre[arr[i]]) {
+        fre[arr[i]] += 1;
+      } else {
+        fre[arr[i]] = 1;
+      }
+    }
+    return fre;
+  }
+  // console.log(fre([1,1,1,1,1,2,2,2,4,4,4,5,6,7,8,9,0]))
+
+  // 21. Write a Program to count the occurrences of a character in a string in JavaScript?
+  function occ(str, char) {
+    return str.split(char).length - 1;
+  }
+  console.log(occ("Heeellooo", "l"));
+
+  // another way
+  function occ(str, char) {
+    let count = 0;
+    for (let i = 0; i < str.length; i++) {
+      if (str[i] === char) {
+        count++;
+      }
+    }
+    return count;
+  }
+  console.log(occ("Heeellooo", "l"));
+
+  // 22. Write a Program to convert Celsius to Fahrenheit in JavaScript?
+  // formulla: Fahrenheit=(Celsius×9/5)+32
+
+  function convert(cel) {
+    return (cel * 9) / 5 + 32;
+  }
+  console.log(convert(20));
+
+  // 23. Write a Program to convert Fahrenheit to Celsius in JavaScript?
+  // formulla: fahrenheit - 32) * 5 / 9
+
+  function farToCel(fahrenheit) {
+    return ((fahrenheit - 32) * 5) / 9;
+  }
+  console.log(farToCel(68));
+
+  //24.  Write a Program to sort an array in Ascending Order in JavaScript?
+  function sort(arr) {
+    return arr.sort((a, b) => b - a);
+  }
+  console.log(sort([4, 3, 2, 7, 8, 9]));
+
+  // another way
+
+  function assSort(arr) {
+    for (let i = 0; i < arr.length; i++) {
+      for (let j = i + 1; j < arr.length; j++) {
+        if (arr[i] > arr[j]) {
+          let temp = arr[i];
+          arr[i] = arr[j];
+          arr[j] = temp;
+        }
+      }
+    }
+    return arr;
+  }
+  // console.log(assSort([4,3,2,7,8,9]));
+
+  // 25. write a Program to sort an array in Descending Order in JavaScript?
+  function assSort(arr) {
+    for (let i = 0; i < arr.length; i++) {
+      for (let j = i + 1; j < arr.length; j++) {
+        if (arr[i] < arr[j]) {
+          let temp = arr[i];
+          arr[i] = arr[j];
+          arr[j] = temp;
+        }
+      }
+    }
+    return arr;
+  }
+  // console.log(assSort([4,3,2,7,8,9]));
+
+  // 26. Write a Program to merge two arrays in JavaScript?
+  function merge(arr1, arr2) {
+    return arr1.concat(arr2);
+  }
+  console.log(merge([1, 2, 3], [1, 4, 5, 6]));
+
+  // 27. Find the Intersection of Two Arrays in JavaScript?
+  function inter(ar1, ar2) {
+    return ar1.filter((value) => ar2.includes(value));
+  }
+  console.log(inter([1, 2, 3], [1, 5, 6]));
+
+  // 28. Find the Union of Two Arrays in JavaScript?
+  function union(arr1, arr2) {
+    return arr1.concat(arr2.filter((value) => !arr1.includes(value)));
+  }
+  console.log(union([1, 2, 3], [1, 5, 6]));
+
+  // 29. Check if a Number is Even or Odd in JavaScript?
+  function iseven(num) {
+    return num % 2 == 0;
+  }
+  console.log(iseven(4));
+
+  // 30. Write a Program to find the minimum value in an array in JavaScript?
+  function min(arr) {
+    return Math.min(...arr);
+  }
+  console.log(min([1, 2, 3]));
+
+  // another way
+  function findMin(arr) {
+    // Assume the first element is the minimum
+    let min = arr[0];
+    for (let i = 1; i < arr.length; i++) {
+      if (min > arr[i]) {
+        // Update min if a smaller value is found
+        min = arr[i];
+      }
+    }
+    return min;
+  }
+
+  console.log(findMin([5, 10, -1, 8]));
+
+  // 31. Check if a String Contains Another String in JavaScript?
+  function string(str, substring) {
+    //searches for the substring within str
+    return str.indexOf(substring) !== -1;
+  }
+
+  console.log(string("GeeksForGeeks", "For"));
+
+  // 32. Find the First Non-Repeated Character in a String in JavaScript ?
+
+
+
+  //
+</script>

@@ -91,7 +91,7 @@ let str = "Hello";
 // console.log(str[0]);
 // console.log(str.charAt(0));
 
-// split - 
+// split -
 let str2 = "Hello";
 console.log(str2.split("H"));
 
@@ -101,12 +101,29 @@ console.log(animal.indexOf("cat", 2)); // [1st[is element] 2nd [is where to star
 
 // lastindexof-
 const animal2 = ["dog", "cat", "goat", "deer"];
-console.log(animal2.lastIndexOf("dog",2));
+console.log(animal2.lastIndexOf("dog", 2));
 
 // tostring - [] array to string / doesnot change original array]
 const animal3 = ["dog", "cat", "goat", "cat", "deer"];
 console.log(animal3.toString(""));
 
 // join [it changes array to string] and it join betwen two array
-const animal4= ["dog", "cat", "goat", "cat", "deer"];
+const animal4 = ["dog", "cat", "goat", "cat", "deer"];
 console.log(animal4.join(" is animal, "));
+
+// for of
+const fruits = ["banana", "orange", "peach", "mango", "grapes"];
+for (let i = 0; i < fruits.length; i++) {
+  console.log(fruits[i]);
+}
+// **************
+console.log("************************");
+for(const fruit of fruits){
+    console.log(fruit);
+    
+}
+
+// ***********************
+console.log("************************");
+
+
