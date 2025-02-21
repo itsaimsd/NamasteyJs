@@ -376,4 +376,93 @@
     return arr.filter(Boolean);
   }
   console.log(removeFalsyValues([2, 1, 0, "", NaN, 4, 5, 6, 7]));
+
+  // if we want to keep falsy value then
+  function keepFalsyValues(arr) {
+    return arr.filter((element) => !Boolean(element)); // Keep falsy values
+  }
+
+  console.log(keepFalsyValues([2, 1, 0, "", NaN, 4, 5, 6, 7]));
+
+  // 39. Calculate the factorial of a number using recursion in JavaScript?
+  function recur(num) {
+    if (num === 0 || num === 1) return 1;
+    else return num * recur(num - 1);
+  }
+  console.log(recur(3));
+
+  // 40. Create an object and print the property?
+
+  let obj1 = { name: "msd" };
+  console.log(obj1.name);
+
+  // 41. Use the map function on an array in JavaScript?
+  function ascending(arr) {
+    return arr.map(function (element) {
+      return element * 2; // Double each element
+    });
+  }
+
+  console.log(ascending([2, 3, 4, 5, 6]));
+  // Output: [4, 6, 8, 10, 12]
+
+  // through arrow function
+  function ascending(arr) {
+    return arr.map((element) => element * 2); // Double each element
+  }
+
+  console.log(ascending([2, 3, 4, 5, 6]));
+  // Output: [4, 6, 8, 10, 12]
+
+  // 42. Write a Program to create a simple class in JavaScript?
+  class Animals {
+    constructor(name) {
+      this.name = name;
+    }
+    speak() {
+      console.log(`${this.name} makes a noise`);
+    }
+  }
+  let dog = new Animals("Dog");
+  dog.speak();
+
+  // 43. Use JSON to parse and stringify data in JavaScript?
+  let jsonData = '{"name": "Geeks"}';
+  let parsedData = JSON.parse(jsonData);
+  console.log(parsedData.name);
+
+  // 44. Convert a string to an array of words in JavaScript?
+  function string(str) {
+    return str.split(" ");
+  }
+  console.log(string("ram is good boy"));
+
+  // 45. Write a switch statement code in JavaScript?
+  function switc(str) {
+    switch (str) {
+      case "javascript":
+        console.log(" Javascript This is my fev language");
+
+        break;
+
+      default:
+        console.log("No language is my fev language");
+
+        break;
+    }
+  }
+  switc("javascript");
+
+  // another way
+  let course = "javascript";
+  switch (course) {
+    case "javascript":
+      console.log("This is a javascript course");
+      break;
+    default:
+      console.log("Not a javascript course");
+  }
+
+  // 46. Check if Two Strings are Anagrams or not in JavaScript?
+
 </script>
