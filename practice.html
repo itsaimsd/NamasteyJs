@@ -545,22 +545,93 @@
   }
   console.log(maxdiff([2, 3, 4, 5, 6, 7, 8, 9]));
 
-
-// Find the maximum difference between the largest and smallest elements.
+  // Find the maximum difference between the largest and smallest elements.
 
   function maxdiff(arr) {
     if (arr.length < 2) {
       return 0;
     }
-    let ans = arr.sort((a, b) => b-a);
+    let ans = arr.sort((a, b) => b - a);
     console.log(ans);
 
     return ans[0] - ans[ans.length - 1];
   }
   console.log(maxdiff([2, 3, 4, 5, 8]));
 
-
   // 48. Remove Duplicates from an Array in JavaScript?
-  
-  
+  // using set
+  arr = [2, 2, 3, 4, 5, 6, 7, 7, 7, 8, 9];
+  console.log([...new Set(arr)]);
+
+  // anoother way
+
+  function dup(arr) {
+    let store = [];
+    for (let i = 0; i < arr.length; i++) {
+      if (!store.includes(arr[i])) {
+        store.push(arr[i]);
+      }
+    }
+    return store;
+  }
+  console.log(dup([1, 1, 1, 2, 5, 3, 4, 5]));
+
+  // 50. Get Unique Characters from a String in JavaScript?
+  function uniqStr(str) {
+    let Unique = [];
+    for (let i = 0; i < str.length; i++) {
+      if (!Unique.includes(str[i])) {
+        Unique.push(str[i]);
+      }
+    }
+    return Unique.join("");
+  }
+  console.log(uniqStr("madhusudan Tiwari"));
+  // another way
+  // 50. Get Unique Characters from a String in JavaScript?
+  function uniqStr(str) {
+    return [...new Set(str)].join("");
+  }
+
+  console.log(uniqStr("madhusudan Tiwari"));
+
+  // 49. Count Vowels in a String in JavaScript?
+
+  function vowel(str) {
+    let count = 0;
+    let vow = "aeiouAEIOU";
+    for (let i = 0; i < str.length; i++) {
+      if (vow.includes(str[i])) {
+        console.log(str[i]);
+
+        count++;
+      }
+    }
+    return count;
+  }
+  console.log(vowel("Hello world"));
+
+  // another way
+  function vowel(str) {
+    let vow = "aeiouAEIOU";
+    return str.split("").filter((char) => vow.includes(char)).length;
+  }
+  console.log(vowel("Hello World"));
+
+  // 51. Find sum of all array(use reduce methods)
+  const arr3 = [1, 2, 3, 4, 5];
+  const summ = arr3.reduce(
+    (accumulator, currentValue) => accumulator + currentValue,
+    0
+  );
+  console.log(summ); // Output: 15
+  // another way
+  const arr4 = [1, 2, 3, 4, 5];
+  let sum = 0;
+
+  for (let i = 0; i < arr4.length; i++) {
+    sum += arr4[i];
+  }
+
+  console.log(sum); // Output: 15
 </script>
